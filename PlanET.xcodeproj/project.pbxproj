@@ -6,11 +6,62 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		B10274462F295E1A00B914A6 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B10274452F295E1A00B914A6 /* WidgetKit.framework */; };
+		B10274482F295E1A00B914A6 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B10274472F295E1A00B914A6 /* SwiftUI.framework */; };
+		B10274592F295E1E00B914A6 /* PlanETWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B10274432F295E1A00B914A6 /* PlanETWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B10274572F295E1E00B914A6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B172CC5B2F1E6E2500A18DA5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B10274422F295E1A00B914A6;
+			remoteInfo = PlanETWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B102745A2F295E1E00B914A6 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B10274592F295E1E00B914A6 /* PlanETWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		B10274432F295E1A00B914A6 /* PlanETWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PlanETWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B10274452F295E1A00B914A6 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		B10274472F295E1A00B914A6 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		B172CC632F1E6E2500A18DA5 /* PlanET.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanET.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		B102745D2F295E1E00B914A6 /* Exceptions for "PlanETWidget" folder in "PlanETWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = B10274422F295E1A00B914A6 /* PlanETWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		B10274492F295E1A00B914A6 /* PlanETWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B102745D2F295E1E00B914A6 /* Exceptions for "PlanETWidget" folder in "PlanETWidgetExtension" target */,
+			);
+			path = PlanETWidget;
+			sourceTree = "<group>";
+		};
 		B172CC652F1E6E2500A18DA5 /* PlanET */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = PlanET;
@@ -19,6 +70,15 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B10274402F295E1A00B914A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B10274482F295E1A00B914A6 /* SwiftUI.framework in Frameworks */,
+				B10274462F295E1A00B914A6 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B172CC602F1E6E2500A18DA5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -29,10 +89,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B10274442F295E1A00B914A6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B10274452F295E1A00B914A6 /* WidgetKit.framework */,
+				B10274472F295E1A00B914A6 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B172CC5A2F1E6E2500A18DA5 = {
 			isa = PBXGroup;
 			children = (
 				B172CC652F1E6E2500A18DA5 /* PlanET */,
+				B10274492F295E1A00B914A6 /* PlanETWidget */,
+				B10274442F295E1A00B914A6 /* Frameworks */,
 				B172CC642F1E6E2500A18DA5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				B172CC632F1E6E2500A18DA5 /* PlanET.app */,
+				B10274432F295E1A00B914A6 /* PlanETWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,6 +120,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		B10274422F295E1A00B914A6 /* PlanETWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B102745E2F295E1E00B914A6 /* Build configuration list for PBXNativeTarget "PlanETWidgetExtension" */;
+			buildPhases = (
+				B102743F2F295E1A00B914A6 /* Sources */,
+				B10274402F295E1A00B914A6 /* Frameworks */,
+				B10274412F295E1A00B914A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				B10274492F295E1A00B914A6 /* PlanETWidget */,
+			);
+			name = PlanETWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = PlanETWidgetExtension;
+			productReference = B10274432F295E1A00B914A6 /* PlanETWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		B172CC622F1E6E2500A18DA5 /* PlanET */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B172CC6E2F1E6E2900A18DA5 /* Build configuration list for PBXNativeTarget "PlanET" */;
@@ -55,10 +149,12 @@
 				B172CC5F2F1E6E2500A18DA5 /* Sources */,
 				B172CC602F1E6E2500A18DA5 /* Frameworks */,
 				B172CC612F1E6E2500A18DA5 /* Resources */,
+				B102745A2F295E1E00B914A6 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B10274582F295E1E00B914A6 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				B172CC652F1E6E2500A18DA5 /* PlanET */,
@@ -80,6 +176,9 @@
 				LastSwiftUpdateCheck = 2620;
 				LastUpgradeCheck = 2620;
 				TargetAttributes = {
+					B10274422F295E1A00B914A6 = {
+						CreatedOnToolsVersion = 26.2;
+					};
 					B172CC622F1E6E2500A18DA5 = {
 						CreatedOnToolsVersion = 26.2;
 					};
@@ -100,11 +199,19 @@
 			projectRoot = "";
 			targets = (
 				B172CC622F1E6E2500A18DA5 /* PlanET */,
+				B10274422F295E1A00B914A6 /* PlanETWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B10274412F295E1A00B914A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B172CC612F1E6E2500A18DA5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -115,6 +222,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B102743F2F295E1A00B914A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B172CC5F2F1E6E2500A18DA5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -124,7 +238,80 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		B10274582F295E1E00B914A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B10274422F295E1A00B914A6 /* PlanETWidgetExtension */;
+			targetProxy = B10274572F295E1E00B914A6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		B102745B2F295E1E00B914A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6UASFZFT3X;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PlanETWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PlanETWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = leahlee.PlanET.PlanETWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B102745C2F295E1E00B914A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6UASFZFT3X;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PlanETWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PlanETWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = leahlee.PlanET.PlanETWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		B172CC6C2F1E6E2900A18DA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -177,7 +364,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -232,7 +421,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -244,8 +435,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PlanET/PlanET.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6UASFZFT3X;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
@@ -260,7 +453,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 26.2;
@@ -286,8 +479,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PlanET/PlanET.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6UASFZFT3X;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
@@ -302,7 +497,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 26.2;
@@ -326,6 +521,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B102745E2F295E1E00B914A6 /* Build configuration list for PBXNativeTarget "PlanETWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B102745B2F295E1E00B914A6 /* Debug */,
+				B102745C2F295E1E00B914A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B172CC5E2F1E6E2500A18DA5 /* Build configuration list for PBXProject "PlanET" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

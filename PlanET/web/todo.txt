@@ -1,0 +1,99 @@
+PlanET Web / PWA — checklist
+==============================
+
+Setup
+-----
+[ ] Run the site over http://localhost (not file://), e.g. python3 -m http.server from the web folder
+[ ] Keep Swift TaskItem JSON field names so iOS export ↔ web import stays compatible
+
+Step 1 — Data + persistence (foundation)
+-----------------------------------------
+[ ] In app.js: task objects matching Swift TaskItem (id, title, deadline, isCompleted, completedDate, recurrenceRule, hasGeneratedNext, category, isNotificationEnabled)
+Change the HTML mentally before you type
+Right now you probably have one <ul id="task-list">.
+
+For Step 2 you want something like (conceptually):
+
+For each quadrant → section with a title
+For each bucket in that quadrant → subtitle + list of tasks
+You don’t need the exact tags yet — just know: nested structure = nested loops when you render.
+
+Your job: Sketch a rough hierarchy: quadrant → bucket → tasks.
+
+5. Build in two phases (so you don’t get stuck)
+Data only: In app.js, define quadrants/buckets and write a function getTasksForBucket(tasks, bucket) (or the same name as Swift) that returns the right subset. Test with console.log — print bucket name and how many tasks match.
+DOM only: Once the numbers look right, replace the single list with a render that loops quadrants → buckets → tasks and creates the right DOM nodes.
+If you mix both on the first try, bugs are harder to see.
+
+6. How you’ll know Step 2 is done
+Add a few tasks with different deadlines (far vs near future).
+Each task appears under exactly one bucket (for incomplete, future-due tasks).
+Nothing that’s overdue should appear in those forward buckets (same as Swift).
+7. If you get stuck
+Re-read getTasks(for:) line by line in Swift and translate each condition into English, then into your own JS.
+Compare one task manually: compute seconds until deadline, decide which bucket should win, check if your function agrees.
+[ ] loadTasks() / saveTasks() using localStorage (key e.g. planet_tasks or match SavedTasks.json idea)
+[ ] renderTasks() fills #task-list (or rebuild list each save)
+[ ] Wire #task-form: submit adds a task (even dummy title + Date) and calls saveTasks()
+[ ] Verify: refresh page — tasks still there
+
+Step 2 — Time buckets / quadrants
+----------------------------------
+[ ] Copy quadrants + allBuckets definitions from TaskManager.swift
+[ ] Port getTasks(for bucket) filtering logic
+[ ] Update index.html / render: sections per quadrant and bucket (not one flat ul)
+[ ] Verify: tasks appear under correct bucket names
+
+Step 3 — addTask(from:) — do in slices
+---------------------------------------
+[ ] Slash dates (M/D)
+[ ] Explicit time (5pm, 17:30, etc.)
+[ ] Time keywords (morning, noon, …)
+[ ] Fuzzy duration (“in 2 hours”)
+[ ] Manual / fuzzy text dates
+[ ] Recurrence detection + calculateNextDate / first occurrence
+[ ] Test same example strings you used on iOS
+
+Step 4 — Categories & colors
+----------------------------
+[ ] categoryColors map + save/load (separate key or same blob as Swift)
+[ ] colorFor(category) → CSS color (hue from stored string / hex legacy)
+[ ] Group tasks by category inside buckets; collapse when ≥3 (QuadrantView rules)
+[ ] GroupHeaderView-style expand/collapse in JS
+
+Step 5 — Completion, overdue, history
+-------------------------------------
+[ ] toggleCompletion + completedDate
+[ ] handleRecurrence + pruneHistory when completing recurring tasks
+[ ] getOverdueTasks + getCompletedTasks
+[ ] UI: History section — overdue strip + completed list (like ContentView)
+
+Step 6 — Modals / managers
+--------------------------
+[ ] Task row: tap opens edit — title, deadline, remind toggle, delete (EditTaskSheet)
+[ ] Category manager: list, rename, delete, assignment sheet + notification toggle per category
+[ ] Recurring manager: change rule (daily / weekly / custom days, etc.)
+
+Step 7 — Import / export
+------------------------
+[ ] Export: download JSON array of tasks (same shape as iOS SavedTasks.json)
+[ ] Import: file input, JSON.parse, merge by id (skip duplicates like importTasks)
+
+Step 8 — PWA
+------------
+[ ] manifest.json (name, icons, theme_color, display standalone, start_url)
+[ ] Icon PNGs (e.g. 192 + 512)
+[ ] sw.js — cache shell for offline
+[ ] Register service worker from app.js
+
+Polish (optional)
+-----------------
+[ ] styles.css — layout, dark/light (prefers-color-scheme or toggle + localStorage)
+[ ] Mobile layout vs wide layout (tabs or columns like iPhone vs iPad)
+[ ] Browser notifications (optional; different from iOS UNUserNotificationCenter)
+
+Reference files (Swift — behavior only, not runnable in browser)
+---------------------------------------------------------------
+PlanETApp.swift, ContentView.swift, TaskManager.swift, QuadrantView.swift,
+TaskRowView.swift, OverdueRowView.swift, GroupHeaderView.swift,
+EditTaskSheet.swift, CategoryManagerView.swift, RecurringManagerView.swift

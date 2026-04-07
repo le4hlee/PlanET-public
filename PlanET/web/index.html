@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PlanET</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>PlanET</h1>
+  </header>
+
+  <main>
+    <section aria-label="Add task">
+      <form id="task-form">
+        <label for="task-input">New task</label>
+        <input
+          id="task-input"
+          type="text"
+          name="task"
+          placeholder="e.g. Review notes tomorrow 5pm"
+          autocomplete="off"
+        />
+        <button type="submit">Add</button>
+      </form>
+    </section>
+
+    <section aria-label="Tasks">
+      <h2>Tasks</h2>
+      <ul id="task-list"></ul>
+    </section>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
